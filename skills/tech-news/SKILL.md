@@ -1,9 +1,9 @@
 ---
-name: daily-tech-catchup
+name: tech-news
 description: Research and write a Japanese daily technology briefing with direct primary-source links. Use for today's technical catchup, a morning tech briefing, or a dated daily issue. Not for weekly reflection or reviewing personal bookmarks.
 ---
 
-# Daily Tech Catchup
+# Tech News
 
 Write a concise Japanese Markdown report for roughly 20 minutes of reading. Deliver the complete report in the current conversation. A ChatGPT Work Project, a particular conversation title, and cloud-chat tools are not required. Do not create or rename conversations, schedule future runs, or publish the report unless separately requested.
 

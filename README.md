@@ -1,4 +1,4 @@
-# daily-tech-catchup
+# tech-news
 
 一次資料へのリンクを付けた、日本語の日次技術キャッチアップを作るAgent Skillです。Claude CodeとCodexで同じ `SKILL.md` を使えます。
 
@@ -17,8 +17,8 @@
 リポジトリを取得します（同名ディレクトリが既にあれば既存のものを使ってください）。
 
 ```sh
-git clone https://github.com/takuto-san/daily-tech-catchup.git
-cd daily-tech-catchup
+git clone https://github.com/takuto-san/tech-news.git
+cd tech-news
 ```
 
 下のコマンドはmacOS / Linux向けです。既存の同名スキルがある場合は上書きせずに停止します。更新時は差分を確認してから置き換えてください。
@@ -27,34 +27,34 @@ cd daily-tech-catchup
 
 ```sh
 mkdir -p "$HOME/.claude/skills"
-if [ -e "$HOME/.claude/skills/daily-tech-catchup" ] || [ -L "$HOME/.claude/skills/daily-tech-catchup" ]; then
+if [ -e "$HOME/.claude/skills/tech-news" ] || [ -L "$HOME/.claude/skills/tech-news" ]; then
   echo '既存スキルがあります。差分を確認してください。'
 else
-  cp -R skills/daily-tech-catchup "$HOME/.claude/skills/daily-tech-catchup"
+  cp -R skills/tech-news "$HOME/.claude/skills/tech-news"
 fi
 ```
 
 新しいClaude Codeセッションで実行します。
 
 ```text
-/daily-tech-catchup 今日の技術キャッチアップを日本語で。過去号は提供していません。
+/tech-news 今日の技術キャッチアップを日本語で。過去号は提供していません。
 ```
 
 ### Codex
 
 ```sh
 mkdir -p "$HOME/.agents/skills"
-if [ -e "$HOME/.agents/skills/daily-tech-catchup" ] || [ -L "$HOME/.agents/skills/daily-tech-catchup" ]; then
+if [ -e "$HOME/.agents/skills/tech-news" ] || [ -L "$HOME/.agents/skills/tech-news" ]; then
   echo '既存スキルがあります。差分を確認してください。'
 else
-  cp -R skills/daily-tech-catchup "$HOME/.agents/skills/daily-tech-catchup"
+  cp -R skills/tech-news "$HOME/.agents/skills/tech-news"
 fi
 ```
 
 新しいCodexセッションで実行します。
 
 ```text
-$daily-tech-catchup 今日の技術キャッチアップを日本語で。過去号は提供していません。
+$tech-news 今日の技術キャッチアップを日本語で。過去号は提供していません。
 ```
 
 プロジェクト単位で使う場合は、同じフォルダを対象リポジトリの `.claude/skills/` または `.agents/skills/` に置きます。重複登録を避け、個人用・プロジェクト用のどちらかを選んでください。Windowsでは同じ配置先へフォルダを手動コピーできます。
@@ -73,9 +73,5 @@ $daily-tech-catchup 今日の技術キャッチアップを日本語で。過去
 ## 移植時の変更
 
 元のChatGPT Work向け指示から、特定プロジェクトと `MM.DD` 形式のチャット名の必須条件、専用チャットツールへの依存を除きました。調査基準と記事構成を維持し、過去号・Webアクセスがない場合、早朝の暫定版、記事不足時の扱いを明確にしています。週次振り返りやブックマーク整理は対象外です。
-
-## 検証
-
-構造検証、インストール手順、CLIスモークテストの結果は [VALIDATION.md](VALIDATION.md) を参照してください。モデル、利用権限、Web取得機能によって出力と調査範囲は変わります。
 
 配置・起動方法の公式資料: [Claude Code Skills](https://code.claude.com/docs/en/skills)、[Codex Skills](https://developers.openai.com/codex/skills)。
